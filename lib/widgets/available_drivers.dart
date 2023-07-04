@@ -53,6 +53,8 @@ class AvailableDrivers extends StatelessWidget {
                     DataColumn(label: Text('Location'),),
                     DataColumn(label: Text('Rating'),),
                     DataColumn(label: Text('Action'),),
+                    DataColumn(label: Text('Edit/Update'),),
+                    DataColumn(label: Text('Remove'),),
                   ], rows: List<DataRow>.generate(
                 7,
                     (index) => DataRow(
@@ -108,6 +110,44 @@ class AvailableDrivers extends StatelessWidget {
                         child: CustomText(
                           text: "Assign Delivery",
                           color: active.withOpacity(.7),
+                          weight: FontWeight.bold,
+                          size: 10,
+                        ),
+                      ),
+                    ),
+                    DataCell(
+                      Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.green, width: .5),
+                          color: light,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 12,
+                          vertical: 6,
+                        ),
+                        child: CustomText(
+                          text: "Edit driver",
+                          color: Colors.green.withOpacity(.7),
+                          weight: FontWeight.bold,
+                          size: 10,
+                        ),
+                      ),
+                    ),
+                    DataCell(
+                      Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.red, width: .5),
+                          color: light,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 12,
+                          vertical: 6,
+                        ),
+                        child: CustomText(
+                          text: "Delete",
+                          color: Colors.red.withOpacity(.7),
                           weight: FontWeight.bold,
                           size: 10,
                         ),

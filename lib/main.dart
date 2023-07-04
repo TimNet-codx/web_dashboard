@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
        getPages: [
          GetPage(name: RootRoute, page: () => SiteLayout()),
          GetPage(name: AuthenticationPageRoute, page: () => AuthenticationPage())
-       ], 
+       ],
        debugShowCheckedModeBanner: false,
       title: "Dash",
         theme: ThemeData(
