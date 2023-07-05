@@ -6,7 +6,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.2.0'
+        classpath 'com.android.tools.build:gradle:7.2.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -19,6 +19,10 @@ allprojects {
 }
 
 rootProject.buildDir = '../build'
+
+dependencies {
+    implementation 'com.android.support:support-annotations:28.0.0'
+}
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
 }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:web_dashboard/constants/style.dart';
-import 'package:web_dashboard/layout.dart';
 import 'package:web_dashboard/routing/routes.dart';
 import 'package:web_dashboard/widgets/custom_text.dart';
 
@@ -18,15 +17,21 @@ class AuthenticationPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Row(
-                  children: [
-                    Padding(padding: EdgeInsets.only(right: 12),
-                      child: Image.asset("assets/icons/logo.png"),),
-                    Expanded(child: Container())
-                  ],
+                Center(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(left: 150),
+                        child: Image.asset("assets/icons/logo.png"),
+                      ),
+                      Expanded(child: Container()),
+                    ],
+                  ),
                 ),
                 SizedBox(height: 30,),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text("Login", style: TextStyle(
                         fontSize: 30,
@@ -35,6 +40,7 @@ class AuthenticationPage extends StatelessWidget {
                   ],
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     CustomText(
                         text: "Welcome back to the admin panel",
@@ -75,7 +81,7 @@ class AuthenticationPage extends StatelessWidget {
                         CustomText(text: "Remember Me", size: 15, color: Colors.black, weight: FontWeight.normal)
                       ],
                     ),
-                    CustomText(text: "Forgot", size: 16, color: active, weight: FontWeight.bold)
+                    CustomText(text: "Forgot Password", size: 16, color: active, weight: FontWeight.bold)
                   ],
                 ),
                 SizedBox(height: 15,),
