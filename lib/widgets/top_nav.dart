@@ -18,8 +18,10 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
               onPressed: () {
                 key.currentState?.openDrawer();
               },
+              padding: const EdgeInsets.only(bottom: 20),
               icon: const Icon(Icons.menu)),
       elevation: 0,
+
       title: Row(
         children: [
           Visibility(
@@ -29,6 +31,7 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
             size: 20,
             weight: FontWeight.bold,
           )),
+
           Expanded(child: Container()),
           IconButton(
               onPressed: () {},
