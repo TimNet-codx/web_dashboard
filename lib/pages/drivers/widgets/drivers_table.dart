@@ -27,6 +27,31 @@ class DriversTable extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                  flex: 5,
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Text("Create New Driver:",),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          ElevatedButton.icon(
+                              onPressed: (){}, icon: Icon(Icons.add), label: Text("Add New"))
+                        ],
+                      )
+                    ],
+                  )
+              )
+            ],
+          ),
+          SizedBox(
+            height: 25,
+          ),
+          Row(
             children: [
               SizedBox(
                 width: 10,
@@ -160,7 +185,31 @@ class DriversTable extends StatelessWidget {
           SizedBox(
             height: 70,
           ),
-
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                  flex: 5,
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Text("Create New Driver:",),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          ElevatedButton.icon(
+                              onPressed: (){}, icon: Icon(Icons.add), label: Text("Add New"))
+                        ],
+                      )
+                    ],
+                  )
+              )
+            ],
+          ),
+          SizedBox(
+            height: 25,
+          ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
