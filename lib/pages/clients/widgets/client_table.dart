@@ -23,119 +23,335 @@ class ClientsTable extends StatelessWidget {
         border: Border.all(color: lightGrey, width: .5),
       ),
       padding: const EdgeInsets.all(16),
-      child:    DataTable(
-        columnSpacing: 12,
-        horizontalMargin: 12,
-        // minWidth: 600,
-        headingRowColor: MaterialStateProperty.resolveWith((states) => Colors.grey.shade200),
-        columns:[
-          DataColumn( label: Text('Name'),),
-          DataColumn(label: Text('Location'),),
-          DataColumn(label: Text('Rating'),),
-          DataColumn(label: Text('Action'),),
-          DataColumn(label: Text('Edit/Update'),),
-          DataColumn(label: Text('Remove'),),
-        ], rows: List<DataRow>.generate(
-        7,
-            (index) => DataRow(
-          cells: [
-            DataCell(
-              CustomText(
-                text: "Santos Enoque",
-                size: 14, // Adjust the font size as needed
-                color: Colors.cyan,
-                weight: FontWeight.normal,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Row(
+            children: [
+              SizedBox(
+                width: 10,
               ),
-            ),
-            DataCell(
               CustomText(
-                text: "New York City",
-                size: 14,
-                color: Colors.cyan,
-                weight: FontWeight.normal,
+                text: "Available Client",
+                color: lightGrey,
+                size: 24,
+                weight: FontWeight.bold,
               ),
-            ),
-            DataCell(
-              Row(
-                mainAxisSize: MainAxisSize.min,
+            ],
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              DataTable(
+                columnSpacing: 12,
+                horizontalMargin: 12,
+                // minWidth: 600,
+                headingRowColor: MaterialStateProperty.resolveWith((states) => Colors.grey.shade200),
+                columns:[
+                  DataColumn( label: Text('Name'),),
+                  DataColumn(label: Text('Location'),),
+                  DataColumn(label: Text('Rating'),),
+                  DataColumn(label: Text('Action'),),
+                  DataColumn(label: Text('Edit/Update'),),
+                  DataColumn(label: Text('Remove'),),
+                ], rows: List<DataRow>.generate(
+                7,
+                    (index) => DataRow(
+                  cells: [
+                    DataCell(
+                      CustomText(
+                        text: "Santos Enoque",
+                        size: 14, // Adjust the font size as needed
+                        color: Colors.cyan,
+                        weight: FontWeight.normal,
+                      ),
+                    ),
+                    DataCell(
+                      CustomText(
+                        text: "New York City",
+                        size: 14,
+                        color: Colors.cyan,
+                        weight: FontWeight.normal,
+                      ),
+                    ),
+                    DataCell(
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            Icons.star,
+                            color: Colors.deepOrange,
+                            size: 14,
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          CustomText(
+                            text: "4.$index",
+                            size: 14,
+                            color: Colors.cyan,
+                            weight: FontWeight.normal,
+                          ),
+                        ],
+                      ),
+                    ),
+                    DataCell(
+                      Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(color: active, width: .5),
+                          color: light,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 12,
+                          vertical: 6,
+                        ),
+                        child: CustomText(
+                          text: "Block Client",
+                          color: active.withOpacity(.7),
+                          weight: FontWeight.bold,
+                          size: 10,
+                        ),
+                      ),
+                    ),
+                    DataCell(
+                      Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.green, width: .5),
+                          color: light,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 12,
+                          vertical: 6,
+                        ),
+                        child: CustomText(
+                          text: "Edit client",
+                          color: Colors.green.withOpacity(.7),
+                          weight: FontWeight.bold,
+                          size: 10,
+                        ),
+                      ),
+                    ),
+                    DataCell(
+                      Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.red, width: .5),
+                          color: light,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 12,
+                          vertical: 6,
+                        ),
+                        child: CustomText(
+                          text: "Delete",
+                          color: Colors.red.withOpacity(.7),
+                          weight: FontWeight.bold,
+                          size: 10,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),)
+            ],
+          ),
+          SizedBox(
+            height: 70,
+          ),
+
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Table(
+                border: TableBorder.all(color: Colors.grey),
+                defaultVerticalAlignment: TableCellVerticalAlignment.middle,
                 children: [
-                  Icon(
-                    Icons.star,
-                    color: Colors.deepOrange,
-                    size: 14,
+                  TableRow(
+                    decoration: BoxDecoration(
+                      color: Colors.grey,
+                    ),
+                    children: [
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(2.0),
+                          child: Center(
+                            child: Text("Name", textAlign: TextAlign.center),
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(2.0),
+                          child: Center(
+                            child: Text("Location", textAlign: TextAlign.center),
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(2.0),
+                          child: Center(
+                            child: Text("Rating", textAlign: TextAlign.center),
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Center(
+                            child: Text("Action", textAlign: TextAlign.center),
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Center(
+                            child: Text("Edit/Update", textAlign: TextAlign.center),
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Center(
+                            child: Text("Remove", textAlign: TextAlign.center),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  CustomText(
-                    text: "4.$index",
-                    size: 14,
-                    color: Colors.cyan,
-                    weight: FontWeight.normal,
-                  ),
+                  ...List.generate(7, (index) => TableRow(
+                    children: [
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Center(
+                            child: Text("Santos Enoque", textAlign: TextAlign.center),
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Center(
+                            child: Text("New York City", textAlign: TextAlign.center),
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.star,
+                                color: Colors.deepOrange,
+                                size: 14,
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Text("$index", textAlign: TextAlign.center),
+                            ],
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              border: Border.all(color: active, width: .5),
+                              color: light,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            padding: EdgeInsets.symmetric(
+                              vertical: 6,
+                            ),
+                            child: Text(
+                              "Block Client",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: active.withOpacity(.7),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 10,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.green, width: .5),
+                              color: light,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            padding: EdgeInsets.symmetric(
+                              vertical: 6,
+                            ),
+                            child: Text(
+                              "Edit Client",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Colors.green.withOpacity(.7),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 10,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.red, width: .5),
+                              color: light,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            padding: EdgeInsets.symmetric(
+                              vertical: 6,
+                            ),
+                            child: Text(
+                              "Delete",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Colors.red.withOpacity(.7),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 10,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  )),
                 ],
               ),
-            ),
-            DataCell(
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(color: active, width: .5),
-                  color: light,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                padding: EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 6,
-                ),
-                child: CustomText(
-                  text: "Block Client",
-                  color: active.withOpacity(.7),
-                  weight: FontWeight.bold,
-                  size: 10,
-                ),
-              ),
-            ),
-            DataCell(
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.green, width: .5),
-                  color: light,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                padding: EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 6,
-                ),
-                child: CustomText(
-                  text: "Edit driver",
-                  color: Colors.green.withOpacity(.7),
-                  weight: FontWeight.bold,
-                  size: 10,
-                ),
-              ),
-            ),
-            DataCell(
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.red, width: .5),
-                  color: light,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                padding: EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 6,
-                ),
-                child: CustomText(
-                  text: "Delete",
-                  color: Colors.red.withOpacity(.7),
-                  weight: FontWeight.bold,
-                  size: 10,
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
+            ],
+          )
+        ],
       ),
     );
   }

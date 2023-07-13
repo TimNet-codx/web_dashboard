@@ -112,7 +112,7 @@ class AuthenticationPage extends StatelessWidget {
 
                 RichText(text: TextSpan(
                     children: [
-                      TextSpan(text: "Do not have admin credentials?"),
+                      TextSpan(text: "Do not have admin credentials?", style: TextStyle(color: active)),
                       TextSpan(text: "Request credentials!", style: TextStyle(color: active)),
 
                     ]

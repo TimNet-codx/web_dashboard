@@ -75,12 +75,12 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
             weight: FontWeight.bold,
           ),
           SizedBox(
-            width: 16,
+            width: 24,
           ),
           Container(
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(50),
             ),
             child: Container(
               padding: EdgeInsets.all(2),
@@ -96,6 +96,7 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
           )
         ],
       ),
+
       iconTheme: IconThemeData(color: dark),
       backgroundColor: Colors.transparent,
     );

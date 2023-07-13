@@ -11,7 +11,7 @@ class CustomText extends StatelessWidget {
       required this.text,
       required this.size,
       required this.color,
-      required this.weight})
+      required this.weight,  TextAlign? textAlign})
       : super(key: key);
 
   @override

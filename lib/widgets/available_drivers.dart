@@ -5,6 +5,7 @@ import 'package:web_dashboard/widgets/custom_text.dart';
 import 'package:flutter/rendering.dart';
 
 class AvailableDrivers extends StatelessWidget {
+
   // const AvailableDrivers();
   @override
   Widget build(BuildContext context) {
@@ -27,6 +28,31 @@ class AvailableDrivers extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                  flex: 5,
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Text("Create New Driver:",),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          ElevatedButton.icon(
+                              onPressed: (){}, icon: Icon(Icons.add), label: Text("Add New"))
+                        ],
+                      )
+                    ],
+                  )
+              )
+            ],
+          ),
+          SizedBox(
+            height: 25,
+          ),
           Row(
             children: [
               SizedBox(
@@ -156,6 +182,226 @@ class AvailableDrivers extends StatelessWidget {
                   ],
                 ),
               ),)
+            ],
+          ),
+          SizedBox(
+            height: 70,
+          ),
+
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                  flex: 5,
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Text("Create New Driver:",),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          ElevatedButton.icon(
+                              onPressed: (){}, icon: Icon(Icons.add), label: Text("Add New"))
+                        ],
+                      )
+                    ],
+                  )
+              )
+            ],
+          ),
+          SizedBox(
+            height: 25,
+          ),
+
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Table(
+                border: TableBorder.all(color: Colors.grey),
+                defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+                children: [
+                  TableRow(
+                    decoration: BoxDecoration(
+                      color: Colors.grey,
+                    ),
+                    children: [
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(2.0),
+                          child: Center(
+                            child: Text("Name", textAlign: TextAlign.center),
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(2.0),
+                          child: Center(
+                            child: Text("Location", textAlign: TextAlign.center),
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(2.0),
+                          child: Center(
+                            child: Text("Rating", textAlign: TextAlign.center),
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Center(
+                            child: Text("Action", textAlign: TextAlign.center),
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Center(
+                            child: Text("Edit/Update", textAlign: TextAlign.center),
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Center(
+                            child: Text("Remove", textAlign: TextAlign.center),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  ...List.generate(7, (index) => TableRow(
+                    children: [
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Center(
+                            child: Text("Santos Enoque", textAlign: TextAlign.center),
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Center(
+                            child: Text("New York City", textAlign: TextAlign.center),
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.star,
+                                color: Colors.deepOrange,
+                                size: 14,
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Text("$index", textAlign: TextAlign.center),
+                            ],
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              border: Border.all(color: active, width: .5),
+                              color: light,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            padding: EdgeInsets.symmetric(
+                              vertical: 6,
+                            ),
+                            child: Text(
+                              "Assign Delivery",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: active.withOpacity(.7),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 10,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.green, width: .5),
+                              color: light,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            padding: EdgeInsets.symmetric(
+                              vertical: 6,
+                            ),
+                            child: Text(
+                              "Edit driver",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Colors.green.withOpacity(.7),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 10,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.red, width: .5),
+                              color: light,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            padding: EdgeInsets.symmetric(
+                              vertical: 6,
+                            ),
+                            child: Text(
+                              "Delete",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Colors.red.withOpacity(.7),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 10,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  )),
+                ],
+              ),
             ],
           )
         ],
